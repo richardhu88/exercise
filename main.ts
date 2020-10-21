@@ -1,17 +1,9 @@
-for (let y = 0; y <= 4; y++) {
-    if (y % 2 == 0) {
+basic.forever(function () {
+    for (let y = 0; y <= 8; y++) {
         for (let x = 0; x <= 4; x++) {
-            if (x % 2 == 0) {
-                led.plot(x, y)
-                basic.pause(100)
-            }
+            led.plot(4 - x, 4 - (y - x))
         }
-    } else {
-        for (let x = 0; x <= 4; x++) {
-            if (x % 2 == 1) {
-                led.plot(x, y)
-                basic.pause(100)
-            }
-        }
+        basic.pause(100)
     }
-}
+    basic.clearScreen()
+})
